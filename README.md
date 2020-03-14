@@ -3,7 +3,9 @@ The purpose of this repository is to play around with the nist 800 xml document 
 It is meant to be used as a learning activity.
 
 Some guides:
+
 https://data-flair.training/blogs/python-best-practices/
+
 https://www.python.org/dev/peps/pep-0008/
 
 ## Some useful things
