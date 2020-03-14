@@ -20,7 +20,7 @@ px.print_control('number', 'AC-1')
 ```
 This will print out the control whose _number_ is _AC-1_.
 
-* It is a good idea to get aquainted with the structure of the xml file.
+* It is a good idea to get acquainted with the structure of the xml file.
 ```bash
 head -n40 800-53-controls.xml
 ```
