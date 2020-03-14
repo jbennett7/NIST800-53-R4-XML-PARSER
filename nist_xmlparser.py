@@ -6,6 +6,15 @@ import re
 
 
 class ControlClassNoneException(Exception):
+    """
+    This class is used for exception handling. This is used for when a variable that
+    is supose to hold a control is set to None. An example of its use can be found in
+    the print_control_tags method.
+
+    You can create your own exception classes for situations you need.
+    There benefit comes in when you are debugging or intending for the situation
+    to occur.
+    """
     pass
 
 class NIST800:
@@ -19,12 +28,22 @@ class NIST800:
         self.tree = et.parse(xml_filename)
         self.root = self.tree.getroot()
         self.parent_map = dict((c, p) for p in self.root.iter() for c in p)
+        # This regular expression is used to match namespaces.
         self.regex_ns = re.compile('{..*}')
         self.regex_assignment = re.compile('\[Assignment: organiz(ed|ation)-defined (.*?)\]')
 
     def __get_control__(self, tag, text):
         """
-        Internal function to get a specific control
+        Internal function to get a specific control. In Python '__function__' is the notation
+        that suggests this functions intended use is internal only, but there is nothing stopping
+        you from using it directly. (try it out). Python is an object oriented programming language.
+        However, unlike Java and C++, there is nothing that enforces 'private'.
+        tag - One of the xml tags used inside the control. Good candidates for this are
+              number and title. But try to experiment with it to see what happens when
+              you use different tags:
+              * Would it return multiple controls if controls share the same tag-text combo?
+                (The answer is no, but why?)
+        text - Used to identify the control you want.
         """
         root = self.root
         for control in list(root):

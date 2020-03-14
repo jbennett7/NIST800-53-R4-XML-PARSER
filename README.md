@@ -1,5 +1,10 @@
 # NIST800-53-R4-XML-PARSER
 The purpose of this repository is to play around with the nist 800 xml document using python.
+It is meant to be used as a learning activity.
+
+Some guides:
+https://data-flair.training/blogs/python-best-practices/
+https://www.python.org/dev/peps/pep-0008/
 
 ## Some useful things
 * This is best experminted with in the pyhon console:
@@ -17,3 +22,6 @@ This will print out the control whose _number_ is _AC-1_.
 ```bash
 head -n40 800-53-controls.xml
 ```
+
+* Understand that the document uses namespaces, which is incorporated into the logic
+of the parser (try to find how).
